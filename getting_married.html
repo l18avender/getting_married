@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Weekly Schedule</title>
+<style>
+  @page { size: A4 landscape; margin: 8mm; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Segoe UI", "Trebuchet MS", Arial, sans-serif; color: #5a4440; background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { width: 281mm; min-height: 194mm; padding: 6mm; background: #fff; border: 2.5px solid #FFB6C1; border-radius: 18px; page-break-after: always; position: relative; background-image: radial-gradient(#FFD1DC 1.2px, transparent 1.3px); background-size: 14px 14px; }
+  .page:last-child { page-break-after: auto; }
+  .header { text-align: center; background: linear-gradient(90deg, #FFD1DC, #FFB6C1, #FFD1DC); border: 2px solid #D4A5A5; border-radius: 16px; padding: 6px 10px; margin-bottom: 8px; }
+  .header h1 { margin: 0; font-size: 21pt; color: #8a4b57; letter-spacing: 1px; }
+  .header .sub { font-size: 9pt; color: #7a5a55; }
+  .deco { font-size: 15pt; letter-spacing: 6px; }
+  .grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
+  .day { background: #fff; border: 1.8px solid #FFB6C1; border-radius: 12px; overflow: hidden; }
+  .day h3 { margin: 0; padding: 4px 2px; text-align: center; font-size: 10pt; background: #FFB6C1; color: #fff; text-shadow: 0 1px 0 #D4A5A5; }
+  .day.off h3 { background: #D4A5A5; }
+  .blk { margin: 3px; padding: 3px 5px; border-radius: 8px; background: #FFF0F5; border-left: 4px solid #FFB6C1; font-size: 7.4pt; line-height: 1.25; }
+  .blk b { display: block; color: #a0566a; font-size: 7.2pt; }
+  .blk.uni { background: #FFE4EC; border-left-color: #D4A5A5; }
+  .blk.cs { background: #FDF1E7; border-left-color: #E5B299; }
+  .blk.rev { background: #F6EAF4; border-left-color: #D9A7C7; }
+  .blk.stop { background: #8a4b57; color: #fff; text-align: center; border: none; font-weight: bold; }
+  .blk.stop b { color: #fff; }
+  .blk.free { background: #FFF8DC; border-left-color: #F0D58C; }
+  .offbox { text-align: center; padding: 22px 6px; font-size: 8.5pt; }
+  .offbox .big { font-size: 34pt; }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 8px; font-size: 8pt; }
+  .legend span { padding: 2px 9px; border-radius: 10px; border: 1.5px solid #FFB6C1; background: #FFF0F5; }
+  .callouts { display: flex; gap: 6px; margin-top: 8px; }
+  .call { flex: 1; background: #FFF0F5; border: 2px dashed #D4A5A5; border-radius: 12px; padding: 5px 8px; font-size: 8pt; }
+  .call b { color: #a0566a; }
+  .two { display: grid; grid-template-columns: 1.15fr 1fr; gap: 10px; }
+  .card { background: #fff; border: 2px solid #FFB6C1; border-radius: 16px; overflow: hidden; margin-bottom: 8px; }
+  .card h2 { margin: 0; padding: 6px 12px; font-size: 12.5pt; background: linear-gradient(90deg, #FFB6C1, #FFD1DC); color: #7a3f4d; }
+  table { border-collapse: collapse; width: 100%; font-size: 9pt; }
+  th { background: #FFD1DC; color: #7a3f4d; padding: 5px 8px; text-align: left; }
+  td { padding: 5px 8px; border-top: 1px solid #FFD1DC; }
+  tr:nth-child(even) td { background: #FFF7FA; }
+  td.t { white-space: nowrap; font-weight: bold; color: #a0566a; }
+  .check { display: inline-block; width: 11px; height: 11px; border: 1.8px solid #D4A5A5; border-radius: 3px; vertical-align: middle; margin-right: 3px; }
+  .rules li { margin-bottom: 3px; font-size: 8.8pt; }
+  .footer { text-align: center; font-size: 8pt; color: #a0566a; margin-top: 6px; }
+</style>
+</head>
+<body>
+
+<!-- ================= PAGE 1 ================= -->
+<div class="page">
+  <div class="header">
+    <div class="deco">🎀 🌸 📚 💻 📷 ⏰ 🌸 🎀</div>
+    <h1>✿ My Cute Weekly Schedule ✿</h1>
+    <div class="sub">Saturday → Friday &nbsp;|&nbsp; Study ends at 22:00 &nbsp;|&nbsp; Sleep 00:00 → 07:00–07:30</div>
+  </div>
+
+  <div class="grid">
+    <!-- SATURDAY -->
+    <div class="day"><h3>🌷 Saturday</h3>
+      <div class="blk"><b>09:00 – 10:30 📷</b>Content Creation Planning &amp; Scripting</div>
+      <div class="blk cs"><b>10:30 – 12:30 💻</b>Harvard CS50 Course</div>
+      <div class="blk uni"><b>14:00 – 16:30 📚</b>Uni Study: ASD.3 &amp; POO1 exercises</div>
+      <div class="blk uni"><b>17:00 – 18:30 📚</b>Uni Study: Prob-stat1 / M.NUM</div>
+      <div class="blk cs"><b>19:30 – 21:30 💻</b>CS50 / Coding Practice</div>
+      <div class="blk stop"><b>22:00 ⏰</b>Stop All Work</div>
+    </div>
+    <!-- SUNDAY -->
+    <div class="day"><h3>🌸 Sunday</h3>
+      <div class="blk uni"><b>08:00 – 09:00 🎓</b>Publishing (SM - linkedin)</div>
+      <div class="blk uni"><b>09:00 – 13:00 🎓</b>Uni Classes: Prob-stat1 Td, AO Cr</div>
+      <div class="blk uni"><b>16:10 – 17:50 🎓</b>Uni Class: AO Tp</div>
+      <div class="blk rev"><b>19:00 – 20:00 📖</b>Revision: AO &amp; Prob-stat1</div>
+      <div class="blk cs"><b>20:15 – 21:15 💻</b>CS50 Study</div>
+      <div class="blk stop"><b>22:00 ⏰</b>Stop All Work</div>
+    </div>
+    <!-- MONDAY -->
+    <div class="day"><h3>🌺 Monday</h3>
+      <div class="blk uni"><b>08:00 – 09:00 🎓</b>Publishing (SM - linkedin)</div>
+      <div class="blk uni"><b>09:00 – 13:00 🎓</b>Uni Class: AO Td</div>
+      <div class="blk uni"><b>14:40 – 16:10 🎓</b>Uni Class: ASD.3 Tp</div>
+      <div class="blk rev"><b>18:00 – 19:30 📖</b>Revision: ASD.3 &amp; AO</div>
+      <div class="blk"><b>20:15 – 21:15 📷</b>Short-form Content (Filming / Editing)</div>
+      <div class="blk stop"><b>22:00 ⏰</b>Stop All Work</div>
+    </div>
+    <!-- TUESDAY -->
+    <div class="day"><h3>🌼 Tuesday</h3>
+      <div class="blk uni"><b>08:00 – 09:00 🎓</b>Publishing (SM - linkedin)</div>
+      <div class="blk uni"><b>09:00 – 13:00 🎓</b>Uni Classes: POO1 Tp</div>
+      <div class="blk uni"><b>14:40 – 16:10 🎓</b>Uni Class: ASD.3 Cr</div>
+      <div class="blk rev"><b>18:00 – 19:30 📖</b>Revision: POO1 &amp; ASD.3</div>
+      <div class="blk cs"><b>20:15 – 21:15 💻</b>CS50 Study</div>
+      <div class="blk stop"><b>22:00 ⏰</b>Stop All Work</div>
+    </div>
+    <!-- WEDNESDAY -->
+    <div class="day"><h3>🌹 Wednesday</h3>
+      <div class="blk uni"><b>08:00 – 09:00 🎓</b>Publishing (SM - linkedin)</div>
+      <div class="blk uni"><b>09:00 – 13:00 🎓</b>Uni Class: M.NUM Tp</div>
+      <div class="blk uni"><b>14:40 – 16:10 🎓</b>Uni Class: ASD.3 Td</div>
+      <div class="blk rev"><b>18:00 – 19:30 📖</b>Revision: M.NUM &amp; ASD.3</div>
+      <div class="blk"><b>20:15 – 21:15 📷</b>Short-form Content (Editing / Publishing)</div>
+      <div class="blk stop"><b>22:00 ⏰</b>Stop All Work</div>
+    </div>
+    <!-- THURSDAY -->
+    <div class="day"><h3>🪻 Thursday</h3>
+      <div class="blk uni"><b>08:00 – 13:00 🎓</b>Uni Classes: Sys.Inf Td, GP Tp, POO1 Cr</div>
+      <div class="blk rev"><b>14:00 – 17:00 📖</b>Light Revision: Sys.Inf &amp; GP</div>
+      <div class="blk rev"><b>18:00 – 19:30 ✏️</b>Weekly Wrap-up &amp; Pending Homework</div>
+      <div class="blk cs"><b>20:15 – 22:00 💻</b>Final Study Session</div>
+      <div class="blk stop"><b>22:00 🚫</b>Study Shutdown!</div>
+      <div class="blk free"><b>After 22:00 🌙</b>Late night allowed.</div>
+    </div>
+    <!-- FRIDAY -->
+    <div class="day off"><h3>🎀 Friday</h3>
+      <div class="offbox"><div class="big">🛁🧸☕</div><b style="color:#a0566a;font-size:10pt">OFF DAY<br>REST DAY</b><br><br>No study. No tasks.<br>100% only us ✨</div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span style="background:#FFE4EC">🎓 University</span>
+    <span style="background:#F6EAF4">📖 Revision</span>
+    <span style="background:#FDF1E7">💻 CS50 / Coding</span>
+    <span>📷 Content Creation</span>
+    <span style="background:#8a4b57;color:#fff">⏰ Stop Work</span>
+  </div>
+
+  <div class="callouts">
+    <div class="call"><b>🌙 Sleep:</b> Bed at 00:00 (Thu flexible). Wake 07:00–07:30.</div>
+    <div class="call"><b>⏰ Cutoff:</b> All study ends at 22:00 every night.</div>
+    <div class="call"><b>🍽️ Times:</b> 15 min per meal &amp; per prayer. 20 min commute each way.</div>
+  </div>
+</div>
+
+<!-- ================= PAGE 2 ================= -->
+<div class="page">
+  <div class="header">
+    <div class="deco">🌸 🎀 ☕ 🕌 💻 🎀 🌸</div>
+    <h1>✿ Daily Routine &amp; CS50 Tracker ✿</h1>
+  </div>
+
+  <div class="two">
+    <div>
+      <div class="card">
+        <h2>⏰ Fixed Daily Routine (Sun – Wed)</h2>
+        <table>
+          <tr><th>Time</th><th>Activity</th></tr>
+          <tr><td class="t">06:45 – 07:30</td><td>Wake up + Fajr Prayer + Prep</td></tr>
+          <tr><td class="t">07:30 – 08:00</td><td>Breakfast (15m) + Commute to Uni (20m)</td></tr>
+          <tr><td class="t">13:00 – 14:00</td><td>Return Home + Dhuhr + Lunch (15m) + Rest</td></tr>
+          <tr><td class="t">16:30 – 17:00</td><td>Return Home + Asr Prayer + Evening coffee (15m) + Rest</td></tr>
+          <tr><td class="t">19:30 – 20:15</td><td>Maghrib Prayer + Dinner (15m)</td></tr>
+          <tr><td class="t">21:45 – 22:00</td><td>Isha Prayer + Next Day Planning</td></tr>
+          <tr><td class="t">22:00 – 00:00</td><td>Wind-down / Relax (No Study) 🧸</td></tr>
+          <tr><td class="t">00:00</td><td>Sleep Time 😴 (7.5 hrs)</td></tr>
+        </table>
+      </div>
+      <div class="card">
+        <h2>🎀 Golden Rules</h2>
+        <ul class="rules" style="margin:6px 0;padding-left:26px">
+          <li><b>Wear</b> your glasses.</li>
+          <li><b>Friday</b> is a completely free day for us.</li>
+          <li><b>Thursday night:</b> no academic or CS50 tasks after 22:00.</li>
+          <li>.</li>
+          <li>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div>
+      <div class="card">
+        <h2>📝 Notes &amp; Goals</h2>
+        <div style="height:320px;margin:6px 10px;background:repeating-linear-gradient(#fff,#fff 19px,#FFD1DC 20px);border-radius:8px">
+          we will get married soon.
+          <br>
+          we will have a happy life together.
+          <br>
+          we will be rich and successful.
+          <br>
+          we will travel the world together.
+          <br>
+          we will have a beautiful family.
+          <br>
+          we will be happy forever.
+          <br>
+          we will support each other in everything.
+          <br>
+          we will never give up on our dreams.
+          <br>
+          we will always be there for each other.
+          <br>
+          we will love each other unconditionally.
+
+        </div>
+      </div>
+      <div class="call" style="text-align:center;font-size:9.5pt">✨ <b>Small steps every day = big dreams + get married!</b> ✨</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
